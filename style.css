@@ -1,0 +1,189 @@
+  :root {
+    --branco: #ffffff;
+    --off-white: #f7f8fa;
+    --texto: #1c2230;
+    --texto-suave: #5b6472;
+    --azul: #1d4ed8;
+    --azul-escuro: #16339c;
+    --linha: #e6e9ef;
+    --sombra: 0 10px 30px -12px rgba(28, 34, 48, 0.12);
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--branco);
+    color: var(--texto);
+    font-family: 'Inter', sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ===== Banner ===== */
+  .banner {
+    width: 100%;
+    height: 280px;
+    background: linear-gradient(135deg, #eef2ff, #f7f8fa);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    border-bottom: 1px solid var(--linha);
+  }
+
+  .banner img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  /* Aparece só enquanto não houver imagem no <img> abaixo */
+  .banner .banner-placeholder {
+    color: var(--texto-suave);
+    font-family: 'Inter', sans-serif;
+    font-size: 0.95rem;
+    letter-spacing: 0.02em;
+    text-align: center;
+    padding: 0 1.5rem;
+  }
+
+  /* ===== Cabeçalho / boas-vindas ===== */
+  .intro {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 3rem 1.5rem 2.5rem;
+    text-align: center;
+  }
+
+  .intro .eyebrow {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 0.78rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--azul);
+    margin-bottom: 0.9rem;
+    display: block;
+  }
+
+  .intro h1 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: clamp(1.6rem, 3vw, 2.2rem);
+    line-height: 1.25;
+    margin: 0 0 1rem;
+  }
+
+  .intro p {
+    color: var(--texto-suave);
+    font-size: 1.02rem;
+    line-height: 1.65;
+    margin: 0;
+  }
+
+  /* ===== Grade de painéis ===== */
+  .painel-grid {
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 0 1.5rem 4rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.75rem;
+  }
+
+  .painel {
+    background: var(--off-white);
+    border: 1px solid var(--linha);
+    border-radius: 16px;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    box-shadow: var(--sombra);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .painel:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 16px 36px -14px rgba(28, 34, 48, 0.18);
+  }
+
+  .painel .equipe-tag {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 0.72rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--azul);
+    margin-bottom: 0.9rem;
+  }
+
+  .painel h2 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: 1.15rem;
+    line-height: 1.4;
+    margin: 0 0 0.75rem;
+  }
+
+  .painel .descricao {
+    color: var(--texto-suave);
+    font-size: 0.96rem;
+    line-height: 1.55;
+    margin: 0 0 1.6rem;
+    flex-grow: 1;
+  }
+
+  .painel .acoes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+
+  .btn {
+    flex: 1 1 160px;
+    text-align: center;
+    padding: 0.75rem 1rem;
+    border-radius: 10px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 0.92rem;
+    text-decoration: none;
+    transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+  }
+
+  .btn-primario {
+    background: var(--azul);
+    color: #ffffff;
+  }
+
+  .btn-primario:hover {
+    background: var(--azul-escuro);
+  }
+
+  .btn-secundario {
+    background: transparent;
+    color: var(--azul);
+    border: 1.5px solid var(--azul);
+  }
+
+  .btn-secundario:hover {
+    background: #eef2ff;
+  }
+
+  footer {
+    text-align: center;
+    padding: 2rem 1.5rem 2.5rem;
+    color: var(--texto-suave);
+    font-size: 0.85rem;
+  }
+
+  /* ===== Responsivo ===== */
+  @media (max-width: 720px) {
+    .painel-grid {
+      grid-template-columns: 1fr;
+    }
+    .banner {
+      height: 200px;
+    }
+  }
